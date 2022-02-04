@@ -1,0 +1,30 @@
+---
+let title = "Projects."
+let subtitle = "A few latest projects below designed in the past"
+let show = "Show more"
+---
+
+<div id="asmo__projects">
+    <div class="w-full pt-12 lg:pt-28 px-4 lg:px-28">
+        <div class="asmo__title">
+            <h2 class="font-medium font-clash text-3xl lg:text-4xl text-moon-black-900">{title}</h2>
+        </div>
+        <div class="asmo__subtitle">
+            <h4 class="pt-2 font-medium text-moon-black-700">{subtitle}</h4>
+        </div>
+        <div class="asmo__projects-content">
+            <div class="flex flex-wrap pt-6 gap-6 lg:pt-8 lg:gap-12 mx-auto">
+                <slot slot="asmo__projects-content" />                        
+            </div>
+            <div class="asmo__projects-button">
+                <div class="moon-button pt-4 lg:pt-8 pb-12 flex justify-center">
+                    <a href="/projects">
+                        <button class="font-clash font-medium w-full lg:w-auto px-8 py-2 border rounded-md text-moon-green-900 border-moon-green-900 hover:text-moon-cream-500 hover:bg-moon-green-900 hover:ring-2 hover:ring-moon-green-900">
+                            {show}
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

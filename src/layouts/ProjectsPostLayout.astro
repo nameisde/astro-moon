@@ -1,0 +1,28 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import ProjectsPost from '../components/projects/ProjectsPost.astro';
+import Overview from '../components/Overview.astro';
+import ProjectsLayout from '../layouts/ProjectsLayout.astro';
+import HeroProjects from '../components/HeroProjects.astro';
+import Navbar from '../components/Navbar.svelte';
+import Footer from '../components/Footer.astro';
+import { Markdown } from 'astro/components';
+
+const { content } = Astro.props;
+---
+
+<ProjectsLayout title={content.title} description={content.description} permalink={content.permalink}>
+  <Navbar client:idle slot="navbar" />
+  <HeroProjects slot="hero" date={content.date} readTime={content.readTime} title={content.title} description={content.description} tags={content.tags}/>
+  <Overview slot="overview" headerImage={content.headerImage} role={content.role} type={content.type} duration={content.duration} tools={content.tools} year={content.year} overview={content.overview}/>
+  <ProjectsPost slot="projects">
+    <Markdown>
+      <slot />
+    </Markdown>
+  </ProjectsPost>
+  <Footer slot="footer" />
+</ProjectsLayout>
+
+
+
+

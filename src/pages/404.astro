@@ -1,0 +1,11 @@
+---
+import NotFoundLayout from '../layouts/NotFoundLayout.astro';
+import NotFoundComponents from '../components/NotFound.astro';
+
+const title = "Ooppss... Page Not Be Found"
+const description = "Sorry but the page you are looking for does not exist, have been removed, named changed or is temporarily unavailable"
+---
+
+<NotFoundLayout title={title} description={description} > 
+    <NotFoundComponents slot="404-notfound" />
+</NotFoundLayout>

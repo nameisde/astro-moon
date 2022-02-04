@@ -1,0 +1,14 @@
+---
+import Navbar from '../../components/Navbar.svelte';
+import AboutLayout from '../../layouts/AboutLayout.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/about/About.astro';
+
+let title = "About"
+---
+
+<AboutLayout title={title}>
+    <Navbar client:idle slot="navbar" />
+    <Hero slot="hero" title={title} />
+    <About slot="about" />
+</AboutLayout>

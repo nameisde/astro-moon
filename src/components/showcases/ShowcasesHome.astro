@@ -1,0 +1,20 @@
+---
+import Showcases from '../../components/showcases/Showcases.astro';
+
+const allPosts = Astro.fetchContent('../../pages/showcases/**/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+const slice = sortedPosts.slice(0,4);
+---
+
+<Showcases slot="asmo__showcases-content">
+    {slice.map(({title, url, thumbnail}) =>
+        <div class="w-full pointer-events-none lg:flex-auto lg:w-96">
+            <div class="asmo__showcases-post">
+                <a href={url}>
+                    <img class="lg:block rounded-lg" src={Astro.resolve(thumbnail)} alt={title}>
+                </a>
+            </div>
+        </div>
+    )}
+</Showcases>
+

@@ -1,0 +1,42 @@
+---
+const { role, type, duration, tools, year, overview, headerImage,title } = Astro.props;
+---
+
+<div class="overview">
+  <div class="asmo__overview">
+    <div
+      class="px-4 lg:px-80 tracking-normal leading-7 prose-p:text-moon-black-800">
+      <div class="asmo__overview-introduction">
+        <div class="asmo__header-image">
+          <img class="pb-8 py-12" src={Astro.resolve(headerImage)} alt="overview-image" />
+        </div>
+        <h4 class="text-2xl font-bold text-moon-black-900">Overview</h4>
+        <p class="pt-4">{overview}</p>
+      </div>
+      <div class="asmo__property-project">
+        <div class="py-4 flex flex-wrap">
+          <div class="role py-2 pr-4 lg:pr-16">
+            <h4 class="uppercase font-bold text-moon-black-900">role</h4>
+            <p class="pt-2">{role}</p>
+          </div>
+          <div class="type py-2 pr-4 lg:pr-16">
+            <h4 class="uppercase font-bold text-moon-black-900">type</h4>
+            <p class="pt-2">{type}</p>
+          </div>
+          <div class="duration py-2 pr-4 lg:pr-16">
+            <h4 class="uppercase font-bold text-moon-black-900">duration</h4>
+            <p class="pt-2">{duration}</p>
+          </div>
+          <div class="tools py-2 pr-4 lg:pr-16">
+            <h4 class="uppercase font-bold text-moon-black-900">tools</h4>
+            <p class="pt-2">{tools}</p>
+          </div>
+          <div class="year py-2 pr-4 lg:pr-16">
+            <h4 class="uppercase font-bold text-moon-black-900">year</h4>
+            <p class="pt-2">{year}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

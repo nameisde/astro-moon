@@ -1,0 +1,40 @@
+---
+const allPosts = Astro.fetchContent('../../pages/blog/**/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+
+let read = "🡵 Read Article"
+---
+
+<div id="blog-preview">
+    <div class="asmo__blog-preview">
+        <div class="px-4 lg:px-64 pb-12 mx-auto">
+            {sortedPosts.map(({ title, date, readTime, url, description }) =>
+                <div class="asmo__blog-content">
+                    <div class="block lg:flex lg:pb-8 py-4">
+                        <div class="hidden pt-6 lg:pt-1 lg:w=3/12 lg:block">
+                            <h4 class="text-sm font-semibold text-moon-black-800 lg:mx-12 lg:text-base">
+                                {readTime}
+                            </h4>
+                            <h4 class="text-xs font-medium pt-1 opacity-50 lg:mx-12 text-moon-black-800">
+                                {date}
+                            </h4>
+                        </div>
+                        <div class="lg:w-9/12">
+                            <h2 class="font-clash font-semibold text-xl lg:text-2xl text-moon-black-900">
+                                <a href={url}>{title}</a>
+                            </h2>
+                            <h4 class="pt-2 lg:pt-2 font-normal text-moon-black-700">
+                                {description}
+                            </h4>
+                            <p class="pb-2 lg:pb-0 pt-4 lg:pt-6 font-semibold hover:underline hover:decoration-2 hover:underline-offset-4  hover:decoration-wavy text-moon-black-900 hover:text-moon-green-900">
+                                <a href={url}>
+                                    {read}
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    </div>
+</div>

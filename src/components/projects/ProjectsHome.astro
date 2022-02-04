@@ -1,0 +1,39 @@
+---
+import Projects from '../projects/Projects.astro';
+
+const allPosts = Astro.fetchContent('../../pages/projects/**/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+const slice = sortedPosts.slice(0,2);   
+
+let read = "🡵 Read Article"
+---
+
+<Projects slot="asmo__projects-content">
+    {slice.map(({ title, url, category, thumbnail}) =>
+            <div class="w-full lg:flex-auto lg:w-96">
+                <div class="asmo__projects-home">
+                    <a href={url}>
+                        <img class="pointer-events-none lg:block rounded-lg"
+                            src={Astro.resolve(thumbnail)}
+                            alt={title}>
+                    </a>
+                    <div class="py-4">
+                        <h4 class="text-moon-green-900 font-bold">
+                            {category}
+                        </h4>
+                        <h2
+                            class="font-clash text-xl font-semibold pt-1 text-moon-black-900 lg:text-2xl">
+                            <a href={url}>
+                                {title}
+                            </a>
+                        </h2>
+                        <h5 class="pt-2">
+                            <a href={url} class="font-semibold hover:underline hover:decoration-2  hover:underline-offset-4 hover:decoration-wavy hover:decoration-green-black-900 hover:text-moon-green-900 hover:decoration-moon-green-900">
+                                {read}
+                            </a>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+    )}
+</Projects>

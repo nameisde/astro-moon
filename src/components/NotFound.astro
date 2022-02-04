@@ -1,0 +1,25 @@
+---
+const title = "Ooppss... Page Not Be Found"
+const subtitle = "Sorry but the page you are looking for does not exist, have been removed, named changed or is temporarily unavailable"
+const backToHomepage = "Homepage"
+---
+<div id="404-Not-Found">
+    <div class="asmo__404-Not-Found">
+        <div class="justify-center py-20 px-4 lg:px-96">
+            <div class="px-32">
+                <img width="360" src={Astro.resolve("/src/assets/images/404-image.png")} alt="404-image" />
+            </div>
+            <div class="text-3xl pt-8 pb-2 text-center font-bold text-moon-black-900">
+                <h1>{title}</h1>
+            </div>
+            <div class="text-moon-black-700 py-2 text-center font-medium">
+                <h4>{subtitle}</h4>
+            </div>
+            <div class="py-2 flex justify-center">
+                <button class="rounded-md px-4 py-2 font-medium text-moon-cream-500 bg-moon-green-900 hover:ring-1 hover:ring-moon-green-900">
+                    <a href="/">{backToHomepage}</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

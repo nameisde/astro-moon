@@ -1,0 +1,17 @@
+---
+import ProjectsLayout from '../../layouts/ProjectsLayout.astro';
+import Navbar from '../../components/Navbar.svelte';
+import Hero from '../../components/Hero.astro';
+import ProjectsPreview from '../../components/projects/ProjectsPreview.astro';
+import Footer from '../../components/Footer.astro';
+
+let title = "Projects"
+let description = "The projects below was designed in the past."
+---
+
+<ProjectsLayout title={title} description={description}>
+    <Navbar client:idle slot="navbar" />
+    <Hero slot="hero" title={title} description={description}/>
+    <ProjectsPreview slot="projects" />
+    <Footer slot="footer" />
+</ProjectsLayout>

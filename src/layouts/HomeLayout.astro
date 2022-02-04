@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+const {title, description, permalink} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} permalink={permalink}/>
+    <header>
+      <nav>
+        <slot name="navbar" />
+      </nav>
+      <slot name="hero" />
+    </header>
+  </head>
+  <body>
+    <main>
+      <article>
+          <slot name="projects" />
+          <slot name="showcases" />
+          <slot name="blog" />
+      </article>
+    </main>
+    <footer>
+      <slot name="footer" />
+    </footer>
+  </body>
+</html>

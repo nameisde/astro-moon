@@ -1,0 +1,30 @@
+---
+const { date, readTime, title, description, tags} = Astro.props;
+---
+
+<div id="hero-projects">
+    <div class="asmo__hero-projects">
+        <div class="px-4 lg:px-80">
+            <div class="asmo__projects-content">
+                <div class="lg:text-left text-center lg:pt-16">
+                    <h4 class="font-normal text-sm text-moon-black-700">
+                        Published {date} — {readTime}
+                    </h4>
+                    <h1 class="font-semibold font-clash pt-4 pb-2 text-moon-black-900 text-3xl lg:text-4xl">
+                        {title}
+                    </h1>
+                    <h3 class="font-normal pb-6 text-moon-black-700">
+                        {description}
+                    </h3>
+                    <div class="tags">
+                        {tags.map(tag =>(
+                            <button class="text-sm mr-2 py-2 text-moon-green-900 bg-moon-green-900/10 rounded-md font-semibold px-4">
+                                {tag}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

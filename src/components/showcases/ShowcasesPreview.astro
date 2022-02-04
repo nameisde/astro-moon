@@ -1,0 +1,20 @@
+---
+const allPosts = Astro.fetchContent('../../pages/showcases/**/*.md');
+const sortedPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+---
+
+<div id="showcases-preview">
+    <div class="asmo__showcases-preview">
+        <div class="w-full px-4 lg:px-28 lg:pb-20 pb-12">
+            <div class="flex flex-wrap pt-6 gap-6 lg:pt-8 lg:gap-12 mx-auto">
+                {sortedPosts.map(({ title, thumbnail}) =>
+                    <div class="w-full lg:flex-auto lg:w-96">
+                        <div class="asmo__showcases-gallery">
+                            <img src={Astro.resolve(thumbnail)} alt={title} class="pointer-events-none lg:block rounded-lg">
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    </div>
+</div>

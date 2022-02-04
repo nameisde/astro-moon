@@ -1,0 +1,67 @@
+---
+let introduction = "Hello 👋, I'm Fahfudin Farhan"
+let title = "UI/UX Designer"
+let subtitle = "and Mobile Developer"
+let principles = "I create delighful product that meet business goals and Human-Centered Design Principles"
+let getintouch = "Get in touch"
+let downloadcv = "Download CV"
+let caption = "✴️ Available for freelance or fulltime UI/UX Designer"
+---
+<div class="hero-home">
+    <div class="asmo__hero-home">
+        <div class="px-4 py-8 lg:py-16 lg:px-28">
+            <div class="flex justify-center">
+                <div class="flex-wrap w-full lg:w-5/12">
+                    <div class="moon-hero-introduction">
+                        <h3 class="font-bold text-center pb-2 text-moon-black-900 lg:text-left lg:text-xl">
+                            {introduction}
+                        </h3>
+                    </div>
+                    <div class="asmo__hero-title">
+                        <h1 class="text-2xl text-center font-extrabold text-moon-black-900 leading-normal lg:text-left lg:text-4xl lg:leading-snug">
+                            {title}
+                        </h1>
+                    </div>
+                    <div class="asmo__hero-subtitle">
+                        <h1 class="text-2xl text-center font-extrabold text-moon-black-900 leading-normal lg:text-left lg:text-4xl lg:leading-snug">
+                            {subtitle}
+                        </h1>
+                    </div>
+                    <div class="asmo__hero-principles">
+                        <h5 class="font-medium text-center leading-8 pt-3 text-moon-black-700 lg:text-left">
+                            {principles}
+                        </h5>
+                    </div>
+                    <div class="asmo__button">
+                        <div class="flex flex-row justify-center pt-10 lg:pt-6 lg:justify-start">
+                            <div class="moon-button-getintouch">
+                                <button class="font-clash font-medium px-4 lg:px-6 py-2.5 mr-6 lg:mr-8 rounded-md border hover:ring-1 hover:ring-moon-green-900 border-moon-green-800 text-moon-cream-500 bg-moon-green-800 hover:bg-moon-green-900">
+                                    <a href="mailto:fahfudinfarhan@gmail.com">
+                                        {getintouch}
+                                    </a>
+                                </button>
+                            </div>
+                            <div class="asmo__button-cv">
+                                <button class="font-clash font-medium px-4 lg:px-6 py-2.5 rounded-md border hover:ring-1 hover:ring-moon-green-900 border-moon-black-900 text-moon-black-900 hover:border-moon-green-900 hover:text-moon-green-900">
+                                    <a href="/download-cv">
+                                        {downloadcv}
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="asmo__caption">
+                            <div class="font-medium text-center pt-16 text-moon-black-700 lg:text-left lg:pt-36">
+                                <caption>{caption}</caption>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="asmo__hero-images">
+                        <div class="flex min-w-full lg:ml-20 lg:w-7/12">
+                            <img class="pointer-events-none hidden lg:block" src={Astro.resolve('../assets/images/hero-image.png')} alt="hero-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

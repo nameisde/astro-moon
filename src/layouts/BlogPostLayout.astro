@@ -1,0 +1,25 @@
+---
+import BlogPost from '../components/Blog/BlogPost.astro';
+import HeroBlog from '../components/HeroBlog.astro';
+import BlogLayout from '../layouts/BlogLayout.astro';
+import Navbar from '../components/Navbar.svelte';
+import Footer from '../components/Footer.astro';
+import { Markdown } from 'astro/components';
+
+const { content } = Astro.props;
+---
+
+<BlogLayout title={content.title} description={content.description} permalink={content.permalink}>
+  <Navbar client:idle slot="navbar" />
+  <HeroBlog slot="hero" date={content.date} readTime={content.readTime} title={content.title} description={content.description} tags={content.tags}/>
+  <BlogPost slot="blog">
+    <Markdown>
+      <slot />
+    </Markdown>
+  </BlogPost>
+  <Footer slot="footer" />
+</BlogLayout>
+
+
+
+
