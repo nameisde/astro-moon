@@ -1,9 +1,9 @@
 ---
-import BlogLayout from '/src/layouts/BlogLayout.astro';
-import HeroBlog from '/src/components/HeroBlog.astro';
-import BlogPost from 'src/components/blog/BlogPost.astro';
-import Navbar from '/src/components/Navbar.svelte';
-import Footer from '/src/components/Footer.astro';
+import BlogPost from '../components/Blog/BlogPost.astro';
+import HeroBlog from '../components/HeroBlog.astro';
+import BlogLayout from '../layouts/BlogLayout.astro';
+import Navbar from '../components/Navbar.svelte';
+import Footer from '../components/Footer.astro';
 import { Markdown } from 'astro/components';
 
 const { content } = Astro.props;
